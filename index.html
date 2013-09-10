@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+	<title>Travelmap 1.8.7</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+
+	<!-- Styles -->
+	<style>
+		a {color:#000; text-decoration:underline}
+		a:hover {color:#222; text-decoration:none}
+		ul li, ol li {font-size:1.2em; line-height:1.5em; margin:3px 0 3px 15px; position:relative}
+		p {line-height:1.4em; font-size:1.2em; margin:5px 0}
+		body {font-family:Arial; font-size:62.5%; background-color:#f6f6f6; margin:35px}
+		header {margin:0 0 15px; padding:0 5px 10px}
+		header #site-name {font-size:1.8em; text-shadow:1px 1px 2px #888; color:#111; margin:0 0 10px}
+		header #site-name a {text-decoration:none}
+		header #site-description {font:normal 1.1em Verdana; text-shadow:1px 1px 2px #888; color:#333}
+		header nav {margin:10px 0}
+		section .title {font-size:1.4em; font-weight:bold; text-decoration:underline; text-shadow:1px 1px 2px #888; display:block; margin:10px 0; width:350px}
+		section code {border-left:5px solid #aaa; margin:0 0 5px; padding:5px; width:650px; background:#eee; display:block; font:normal 1.1em Courier}
+		section code span {font-style:italic; color:#424242; font:normal .8em Verdana}
+		section code span:hover {background-color:#ccc; color:#000}
+		section .top_lnk {display:block; margin-bottom:15px; color:#333}
+		footer {padding:5px; margin:15px 0 0}
+	</style>
+</head>
+<body>
+
+	<header>
+
+		<h1 id="site-name"><a name="home">Travelmap 1.8.7</a></h1>
+		<h2 id="site-description">Add the countries and cities where have you been.</h2>
+
+		<nav>
+			<a href="#setup">setup</a> |
+			<a href="#customise">customise</a> |
+			<a href="#data">data</a>
+		</nav>
+
+	</header>
+
+	<!-- Travelmap -->
+	<section id="travelmap">
+		<a class="title" name="demo">Demo</a>
+		<div id="map_canvas"></div>
+		<a class="top_lnk" href="#home">&uarr; top</a>
+
+		<a class="title" name="setup">How to use the plugin</a>
+		<p>Include the script, the Google API and jQuery framework then use the following options.</p>
+		<code>
+			&lt;script src="<strong>https://maps.googleapis.com/maps/api/js?sensor=false</strong>"&gt;&lt;/script&gt;<br />
+			&lt;script src="<strong>//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js</strong>"&gt;&lt;/script&gt;<br />
+			&lt;script src="<Strong>jquery.travelmap.js</strong>"&gt;&lt;/script&gt;
+		</code>
+		<p>Select an element and set up the script but be careful it only usable with id-s because of how the Google API works.</p>
+		<code>
+			$('#map_canvas').travelmap();
+		</code>
+		<a class="top_lnk" href="#home">&uarr; top</a>
+
+		<a class="title" name="customise">Customise</a>
+		<code>
+			centerLng: 0<br/>
+			centerLat: 0<br/>
+			data: 'cities.json'<br/>
+			mapWidth: 550<br/>
+			mapHeight: 500<br/>
+			zoom: 1<br/>
+			markImage: 'image.png'<br/>
+			markShadow: 'shadow.png'<br/>
+			markAnimation: null<br/>
+			mapTypeId: 'ROADMAP'<br/>
+			mapTypeControl: false<br/>
+			mapTypeControlOptions: 'DEFAULT'<br/>
+			zoomControl: false<br/>
+			zoomControlOptions: 'DEFAULT'<br/>
+			panControl: false<br/>
+			scaleControl: false<br/>
+			overviewMapControl: false<br/>
+			streetViewControl: false
+		</code>
+		<a class="top_lnk" href="#home">&uarr; top</a> | <a href="https://developers.google.com/maps/documentation/javascript/" target="_blank">documentation</a>
+
+		<a class="title" name="data">Data</a>
+		<p>JSON file structure</p>
+		<code>
+			{"places": {"city": [{<br/>
+			"name":"London",<br/>
+			"lng":"51.500152",<br/>
+			"lat":"-0.126236",<br/>
+			"country":"United Kingdom"<br/>
+			"info":"London is the capital city of England"
+			}]}}
+		</code>
+		<a class="top_lnk" href="#home">&uarr; top</a>
+	</section>
+
+	<footer>
+		All rights reserved! <a href="http://troll.sytes.net">troll.sytes.net</a> &copy; 2013
+	</footer>
+
+	<!-- Scripts --> 
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>
+	<script src="jquery.travelmap.js"></script>
+
+	<script>
+		$(document).ready(function() {
+			// Site effects
+			$('.top_lnk').bind('click', function() {
+				$('html, body').animate({ scrollTop: 0 }, 'slow');
+			});
+			// Travelmap
+			$('#map_canvas').travelmap({
+				data: './cities.json',
+				markImage: 'image.png',
+				markShadow: 'shadow.png',
+				markAnimation: 'DROP',
+				mapTypeControl: true,
+				mapTypeControlOptions: 'DROPDOWN_MENU',
+				zoomControl: true,
+				zoomControlOptions: 'SMALL',
+				streetViewControl: true
+			});
+		});
+	</script>
+
+</body>
+</html>

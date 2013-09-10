@@ -1,4 +1,3 @@
-jquery-travel
-=============
+# Travelmap
 
-Pin your visited countries on the map
+Add the countries and cities where have you been
