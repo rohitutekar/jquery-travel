@@ -6,7 +6,7 @@
 *
 * Copyright (c) 2013 microtroll
 *
-* Version: 1.8.9 (21/09/2013)
+* Version: 1.9 (21/09/2013)
 * Requires: jQuery v2+
 *
 * Dual licensed under the MIT and GPL licenses:
@@ -19,11 +19,15 @@
 	$.fn.travelmap = function(settings) {
 
 		var o = {
+			provider: "google", // "bing"
+			
 			centerLng: 0,
 			centerLat: 0,
 			data: 'cities.json',
 			mapWidth: 550,
 			mapHeight: 500,
+
+			// google options
 			zoom: 1,
 			markImage: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsSAAALEgHS3X78AAAACXZwQWcAAAAQAAAAEABcxq3DAAABgklEQVQ4y42Sv0sCYRjHP+97GhFU1OCiQUQ0yhXOaVtzexTNWUFroP0BLrVH0CrObRU0Rl4NDiJy4NHQUCgh1yHv23BnnYcnPfDC8/Pzfl+eV2itGZoQAoALkwJQBvJB6QEoF+v6noiJKODCpDylKJkClqWftxVYGjzJebGuy7GAy3VRmFLcmQKUHr1Jil/IVliJjCgqDYfncnmy1Rey1RfmcnmUBtN/YWkEHAEUUoGzVqmRTKVJptKsVWoABLXCJAAzoczg22Xw7Y6txQFanvKd5ukOfadN32nTPN0BIKi1wgOJCODRVqwuaOg9PfC+twnAtIRZBbYADB4nKThpCLrzBqwYkJH+WTFg3oCGoAucxAKOLLqe5PgtiJX+W+cb4EmOi3Xdjf0Hw594bdLZFmQ+/JBFDbcaZ99iKdw/dgsAPTizFQy0f2zl58b1jlUAcGXS2YAMwDM4BxZLAP9SAPAFh64Hruf7cX2xCgBustQBdl9ZH+aiChJMsE85urLoMMAPnKWcG4TKFSgAAAAldEVYdGNyZWF0ZS1kYXRlADIwMTItMDUtMTVUMDk6MDE6MTIrMDA6MDDHBWYEAAAAFXRFWHRDcmVhdGlvbiBUaW1lADIvMTcvMDggnKpYAAAAJXRFWHRtb2RpZnktZGF0ZQAyMDEyLTA1LTE1VDA5OjAxOjEyKzAwOjAwmLQQMAAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTM5jWRgMAAAGrelRYdFhNTDpjb20uYWRvYmUueG1wAAB42tVSTWvbQBC9+1cM22ul/ZBiRYukUGxMCLiU2NDS20q7UoSt3WW1QRv/+h7suI4JPQRy6DsO72PmMcVdsKLZKQ+16npdIgBA0MsS/bxZk7VdqKf+/uDU5vB92xx2TS7RXTUrAg+DHZQXEIa9HnkokZCmVlyPfFBeYASBh8H6XYm+SVMr+LX+AQvjFKQxjRqSpJDOY5axPJt/hY3w8CA0sAwYIRkwxinlKYUTUDUDgMLJlj8uV6dMJ9sSPXlvOcbTNMVTEhvXYZrnOSYMMxY52Ubji/YiRHr8cjR59VmqsXG99b3R4GTLRW2efYnQDC5wOk7Yc5AeYyFNreLGDDgIi2lM8NkZAIogLF84JbxxW2P21fH8Ve/UZNxuhMUmKfA16T29WgqvKkbIbURYRLMtYTyZ8/Tm94X+SLqSr43s25cLeRKxdEtzTghP2Ul+QXrtBV8V89HCZHPuyz67fWxch2WD1V4NSvsR05i+7Uw2vDVuEL7qB9EpbHVX4L/Df+53nD4uV9WswOe/rN6s9Vn470P+AMIj+zIH4sBMAAAAAElFTkSuQmCC',
 			markShadow: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAQEAYAAABVX8OsAAAABmJLR0T///////8JWPfcAAAACXBIWXMAAABIAAAASABGyWs+AAACc0lEQVRIx+2WO2hTYRiG/1yanrYxibaREluLlrZWUQriBXGRugkOXasg9bYUQYp4mUTqooKg4KCok4u6KCg4COJSOlQ3J6W1tMa0Nk2apKkJSTq8zxGMBJPSbPmWh5Pzn+9/3+/7LzGmFrWoRS2qGK51yuOADbATDvPaJzrvM60H3hDdbp63Me4UHCdPn1B4wfNHGIeFahXICVvgVQy9R/h50foi+reKwSVxy1GxPQHfiqFBsfmZ2DhFAT4xzxvoLypwSYGVhp0wCBHiWsBQjxh4Lrb2YaBb3P5S7Poq9pwTuzeKnTkKwPgA33sOMX2yaP6S4V6jwSZIx1x0oHGPuGmX2HwSgV18doYCsLQ8D6kzRvIYWbnN71ExeYTnOeY9Dq8XFfyfpVrpHrQ7voO8CLToRHBIbLslhh5gGGFelqZFgeqekics5g5g8K4YaxOjdC7VyzjmMfMwVUpwpR20C7IPv7MI3iwGpsQWKu6bwAh7y3EBgT/EzAcxjdDEtLjIHp6jI0uWmL0iFt6hg71d+pBZq8F2BEdI80Ss92JojOH7xfwIAjn90nQuwWER+4wxxsevicmQ+PsxeSiUeQWz5Qr+X9hLsx4e5mf2nkXH/MfEDRgyO4XUZTHKNRD5JobZm5E63t9jPAayFzE2QL6bsOzrodxT1N7ECDEZ8p8VcyzRFa6L+AzCGTdNpSdPiN8RGkbgInswfRBj/RjbzXx3YKxcY3ZU2kHbYCu+O3hNZx0ISF8SF16L83mMLIsprpMM10huFN0sVfMIzvxd0OqF3UH+gfw5Rffi+7TY9FP0Mb7hF+8pjJPDwnAPGr433qJCrlusAobpnIN3kn13AAAAAElFTkSuQmCC',
@@ -36,40 +40,45 @@
 			panControl: false,
 			scaleControl: false,
 			overviewMapControl: false,
-			streetViewControl: false
+			streetViewControl: false,
+
+			// bing options
+
 		};
 		settings = $.extend(o, settings);
 
+		// map provider
+		if (o.provider === "bing") {
+			// call google api
+		} else {
+			// call bing api
+		}
+
+		/* GOOGLE API */
 		// map types
-		var mapTypeId;
+		var mapTypeId = google.maps.MapTypeId.ROADMAP;
 		if (o.mapTypeId === 'HYBRID') {
 			mapTypeId = google.maps.MapTypeId.HYBRID;
 		} else if (o.mapTypeId === 'SATELLITE') {
 			mapType = google.maps.MapTypeId.SATELLITE;
 		} else if (o.mapTypeId === 'TERRAIN') {
 			mapTypeId = google.maps.MapTypeId.TERRAIN;
-		} else {
-			mapTypeId = google.maps.MapTypeId.ROADMAP;
 		}
 
 		// map controls
-		var mapTypeControlOptions;
+		var mapTypeControlOptions = google.maps.MapTypeControlStyle.DEFAULT;
 		if (o.mapTypeControlOptions === 'DROPDOWN_MENU') {
 			mapTypeControlOptions = google.maps.MapTypeControlStyle.DROPDOWN_MENU;
 		} else if (o.mapTypeControlOptions === 'HORIZONTAL_BAR') {
 			mapTypeControlOptions = google.maps.MapTypeControlStyle.HORIZONTAL_BAR;
-		} else {
-			mapTypeControlOptions = google.maps.MapTypeControlStyle.DEFAULT;
 		}
 
 		// map zoom
-		var zoomControlOptions;
+		var zoomControlOptions = google.maps.ZoomControlStyle.DEFAULT;
 		if (o.zoomControlOptions === 'LARGE') {
 			zoomControlOptions = google.maps.ZoomControlStyle.LARGE;
 		} else if (o.zoomControlOptions === 'SMALL') {
 			zoomControlOptions = google.maps.ZoomControlStyle.SMALL;
-		} else {
-			zoomControlOptions = google.maps.ZoomControlStyle.DEFAULT;
 		}
 
 		// marker animation
@@ -81,31 +90,31 @@
 		}
 
 		// basic options
-		var mapCenter = new google.maps.LatLng(o.centerLng,o.centerLat);
-		var mapObject = $(this).attr('id');
-		var mapOptions = {
-			zoom: o.zoom,
-			center: mapCenter,
-			mapTypeId: mapTypeId,
-			mapTypeControl: o.mapTypeControl,
-			mapTypeControlOptions: {
-			    style: mapTypeControlOptions
-		    },
-			zoomControl: o.zoomControl,
-			zoomControlOptions: {
-				style: zoomControlOptions
-		    },
-			panControl: o.panControl,
-			scaleControl: o.scaleControl,
-			overviewMapControl: o.overviewMapControl,
-			streetViewControl: o.streetViewControl
-		};
-		var map = new google.maps.Map(document.getElementById(mapObject), mapOptions);
+		var mapCenter = new google.maps.LatLng(o.centerLng,o.centerLat),
+			mapObject = $(this).attr('id'),
+			mapOptions = {
+				zoom: o.zoom,
+				center: mapCenter,
+				mapTypeId: mapTypeId,
+				mapTypeControl: o.mapTypeControl,
+				mapTypeControlOptions: {
+					style: mapTypeControlOptions
+				},
+				zoomControl: o.zoomControl,
+				zoomControlOptions: {
+					style: zoomControlOptions
+				},
+				panControl: o.panControl,
+				scaleControl: o.scaleControl,
+				overviewMapControl: o.overviewMapControl,
+				streetViewControl: o.streetViewControl
+			},
+			map = new google.maps.Map(document.getElementById(mapObject), mapOptions);
 
 		// global variables
-		var locations = new Array();
-		var markers = new Array();
-		var boxes = new Array();
+		var locations = [],
+			markers = [],
+			boxes = [];
 		
 		// data file parser
 		$.ajax({
@@ -159,8 +168,7 @@
 			},
 			error: function() {
 				throw new Error('Something went wrong!');
-			},
-			contentType: 'application/json'
+			}
 		});
 
 		$(this).css({
