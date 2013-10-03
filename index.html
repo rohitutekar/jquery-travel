@@ -62,8 +62,9 @@
 
 	                    <h3>How to use the plugin</h3>
 	                    <p>Include the script, the Google API and jQuery framework then use the following options.</p>
+	                    <p>Add <pre>&languege=YOUR_COUNTRY_ISO</pre> parameter to maps API to load the map in your language.</p>
 						<code>
-							&lt;script src="<strong>//maps.googleapis.com/maps/api/js?sensor=false</strong>"&gt;&lt;/script&gt;<br>
+							&lt;script src="<strong>//maps.googleapis.com/maps/api/js?sensor=false&language=en</strong>"&gt;&lt;/script&gt;<br>
 							&lt;script src="<strong>//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js</strong>"&gt;&lt;/script&gt;<br>
 							&lt;script src="<Strong>jquery.travelmap.js</strong>"&gt;&lt;/script&gt;
 						</code>
@@ -98,8 +99,8 @@
 							centerLng: 0<br>
 							centerLat: 0<br>
 							data: 'cities.json'<br>
-							mapWidth: 550<br>
-							mapHeight: 500<br>
+							width: 550<br>
+							height: 500<br>
 							zoom: 1<br>
 							markImage: 'image.png'<br>
 							markShadow: 'shadow.png'<br>
@@ -161,11 +162,6 @@
 		$(function() {
 			"use strict";
 
-			// Site effects
-			$('.top_lnk').on('click', function() {
-				$('html, body').animate({ scrollTop: 0 }, 'slow');
-			});
-
 			// Travelmap
 			$('#map_canvas_1').travelmap({
 				markAnimation: 'DROP',
@@ -174,27 +170,27 @@
 				zoomControl: true,
 				zoomControlOptions: 'SMALL',
 				streetViewControl: true,
-				mapHeight: 300,
-				mapWidth: 450,
+				height: 300,
+				width: 450,
 				zoom: 6,
 				geoLocCheck: true
 			});
 
 			$('#map_canvas_2').travelmap({
-				mapHeight: 250,
-				mapWidth: 400
+				height: 250,
+				width: 400
 			});
 
 			$('#map_canvas_3').travelmap({
-				mapHeight: 250,
-				mapWidth: 400,
+				height: 250,
+				width: 400,
 				zoom: 8,
 				geoLocCheck: true
 			});
 
 			$('#map_canvas_4').travelmap({
-				mapHeight: 250,
-				mapWidth: 400,
+				height: 250,
+				width: 400,
 				streetViewControl: true
 			});
 		});
