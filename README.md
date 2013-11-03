@@ -42,6 +42,19 @@ geoLocCheck: false
 geoLocMessage: 'You are here'
 ```
 
+#### Select a theme or specify your own
+
+[Snazzy Maps](http://snazzymaps.com/)
+
+```javascript
+theme: 'neutral-blue'
+theme: 'midnight-commander'
+theme: 'gowalla'
+theme: 'bright-and-bubbly'
+theme: 'greyscale'
+theme: 'red-alert'
+```
+
 #### The JSON object
 
 ```javascript
