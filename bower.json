@@ -3,6 +3,6 @@
 	"version": "1.9.0",
 	"dependencies": {
 		"jquery": "latest",
-		"kraken": "https://github.com/cferdinandi/kraken"
+		"kraken": "https://github.com/cferdinandi/kraken.git"
 	}
 }
