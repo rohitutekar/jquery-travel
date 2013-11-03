@@ -39,7 +39,8 @@ scaleControl: false
 overviewMapControl: false
 streetViewControl: false
 geoLocCheck: false
-geoLocMessage: 'You are here'
+geoLocMessage: 'You are here',
+theme: 'greyscale'
 ```
 
 #### Select a theme or specify your own
