@@ -1,6 +1,6 @@
 {
 	"name":  "Travelmap",
-	"version": "1.9.0",
+	"version": "1.9.1",
 	"dependencies": {
 		"jquery": "latest",
 		"kraken": "https://github.com/cferdinandi/kraken.git"

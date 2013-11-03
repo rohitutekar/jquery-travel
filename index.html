@@ -34,7 +34,7 @@
 
 	<section class="container">
 
-		<h1>Travelmap v1.9</h1>
+		<h1>Travelmap v1.9.1</h1>
 
 		<article>
 			<h3>How to use the plugin</h3>
@@ -76,13 +76,28 @@
 				overviewMapControl: false<br>
 				streetViewControl: false<br>
 				geoLocCheck: false<br>
-				geoLocMessage: 'You are here'
+				geoLocMessage: 'You are here',<br>
+				theme: 'greyscale'
+			</code>
+		</article>
+
+		<article>
+			<h3>Select a theme or specify your own</h3>
+			<div id="map_canvas_3"></div>
+			<p><a href="http://snazzymaps.com/" target="_blank">Snazzy Maps</a></p>
+			<code>
+				theme: 'neutral-blue'<br>
+				theme: 'midnight-commander'<br>
+				theme: 'gowalla'<br>
+				theme: 'bright-and-bubbly'<br>
+				theme: 'greyscale'<br>
+				theme: 'red-alert'<br>
 			</code>
 		</article>
 
 		<article>
 			<h3>The JSON object</h3>
-			<div id="map_canvas_3"></div>
+			<div id="map_canvas_4"></div>
 	        <code>
 				{"places": {"city": [{<br>
 				"name":"London",<br>
@@ -128,6 +143,12 @@
 			});
 
 			$('#map_canvas_3').travelmap({
+				theme: 'neutral-blue',
+				height: 250,
+				width: 400
+			});
+
+			$('#map_canvas_4').travelmap({
 				height: 250,
 				width: 400,
 				zoom: 8,
