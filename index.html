@@ -1,161 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="utf-8">
-	<title>Travelmap</title>
 
-	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-	<link rel="stylesheet" href="//yui.yahooapis.com/pure/0.3.0/pure-min.css">
-	<link rel="stylesheet" href="//purecss.io/combo/1.6.3?/css/layouts/marketing.css">
+    <title>Travelmap</title>
+    <meta name="description" content="Pin your visited cities and countries on Google map with jQuery">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="lib/kraken.css" type="text/css">
+
+    <style>
+		#map_canvas_1,
+		#map_canvas_2,
+		#map_canvas_3 {
+			margin-bottom: 15px;
+		}
+
+		/* Bugfix for Kraken's img max-width */
+		#map_canvas_1 img,
+		#map_canvas_2 img,
+		#map_canvas_3 img {
+			max-width: 1100px;
+		}
+    </style>
 
 </head>
+
 <body>
 
-	<div class="content">
+	<section class="container">
 
-	    <div class="header">
-	        <div class="pure-menu pure-menu-open pure-menu-fixed pure-menu-horizontal">
-	            <a class="pure-menu-heading" name="home">Travelmap</a>
+		<h1>Travelmap v1.9</h1>
 
-	            <ul>
-	                <li class="pure-menu-selected"><a href="#setup">How to use</a></li>
-	                <li><a href="#customize">Customization</a></li>
-	                <li><a href="#data">Data file</a></li>
-	            </ul>
-	        </div>
-	    </div>
+		<article>
+			<h3>How to use the plugin</h3>
+			<div id="map_canvas_1"></div>
+	        <p>Include the script, the Google API and jQuery framework then use the following options.</p>
+	        <p>Add <code>&languege=YOUR_COUNTRY_ISO</code> parameter to maps API to load the map in your language.</p>
+			<code>
+				&lt;script src="<strong>//maps.googleapis.com/maps/api/js?sensor=false&language=en</strong>"&gt;&lt;/script&gt;<br>
+				&lt;script src="<strong>//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js</strong>"&gt;&lt;/script&gt;<br>
+				&lt;script src="<Strong>jquery.travelmap.js</strong>"&gt;&lt;/script&gt;
+			</code>
+			<p>Select an element and set up the script but be careful it only usable with id-s because of how the Google API works.</p>
+			<code>
+				$('#map_canvas').travelmap();
+			</code>
+		</article>
 
-		<div class="splash">
-	        <div class="pure-g-r">
-	            <div class="pure-u-1-3">
-	                <div class="l-box splash-image">
-	                    <div id="map_canvas_1"></div>
-	                </div>
-	            </div>
+		<h3>Highly customizable maps</h3>
+		<article>
+			<div id="map_canvas_2"></div>
+			<p><a href="https://developers.google.com/maps/documentation/javascript/" target="_blank">Google Maps API</a></p>
+			<code>
+				centerLng: 0<br>
+				centerLat: 0<br>
+				data: 'cities.json'<br>
+				width: 550<br>
+				height: 500<br>
+				zoom: 1<br>
+				markImage: 'image.png'<br>
+				markShadow: 'shadow.png'<br>
+				markAnimation: null<br>
+				mapTypeId: 'ROADMAP'<br>
+				mapTypeControl: false<br>
+				mapTypeControlOptions: 'DEFAULT'<br>
+				zoomControl: false<br>
+				zoomControlOptions: 'DEFAULT'<br>
+				panControl: false<br>
+				scaleControl: false<br>
+				overviewMapControl: false<br>
+				streetViewControl: false<br>
+				geoLocCheck: false<br>
+				geoLocMessage: 'You are here'
+			</code>
+		</article>
 
-	            <div class="pure-u-2-3">
-	                <div class="l-box splash-text">
-	                    <h1 class="splash-head">
-	                        Travelmap
-	                    </h1>
+		<article>
+			<h3>The JSON object</h3>
+			<div id="map_canvas_3"></div>
+	        <code>
+				{"places": {"city": [{<br>
+				"name":"London",<br>
+				"lng":"51.500152",<br>
+				"lat":"-0.126236",<br>
+				"country":"United Kingdom"<br>
+				"info":"London is the capital city of England"
+				}]}}
+			</code>
+		</article>
 
-	                    <h2 class="splash-subhead">
-	                        Add the countries and cities where have you been.
-	                    </h2>
+		<p>All rights reserved! <a href="http://github.com/microtroll">microtroll</a> &copy; 2013</p>
 
-	                    <p>Version: 1.9</p>
-
-	                    <p>
-	                        <a href="#setup" class="pure-button primary-button">Get Started</a>
-	                    </p>
-	                </div>
-	            </div>
-	        </div>
-	    </div>
-
-	    <div class="content">
-			<div class="pure-g-r content-ribbon">
-	            <div class="pure-u-2-3">
-	                <div class="l-box">
-	                    <h4 class="content-subhead"><a name="setup">How to use</a></h4>
-
-	                    <h3>How to use the plugin</h3>
-	                    <p>Include the script, the Google API and jQuery framework then use the following options.</p>
-	                    <p>Add <pre>&languege=YOUR_COUNTRY_ISO</pre> parameter to maps API to load the map in your language.</p>
-						<code>
-							&lt;script src="<strong>//maps.googleapis.com/maps/api/js?sensor=false&language=en</strong>"&gt;&lt;/script&gt;<br>
-							&lt;script src="<strong>//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js</strong>"&gt;&lt;/script&gt;<br>
-							&lt;script src="<Strong>jquery.travelmap.js</strong>"&gt;&lt;/script&gt;
-						</code>
-						<p>Select an element and set up the script but be careful it only usable with id-s because of how the Google API works.</p>
-						<code>
-							$('#map_canvas').travelmap();
-						</code>
-	                </div>
-	            </div>
-
-	            <div class="pure-u-1-3">
-	                <div class="l-box">
-	                    <div id="map_canvas_2"></div>
-	                </div>
-	            </div>
-	        </div>
-
-	        <div class="pure-g-r content-ribbon">
-	            <div class="pure-u-1-3">
-	                <div class="l-box">
-	                    <div id="map_canvas_3"></div>
-	                </div>
-	            </div>
-
-	            <div class="pure-u-2-3">
-	                <div class="l-box">
-	                    <h4 class="content-subhead"><a name="customize">Customization</a></h4>
-
-						<h3>Highly customizable maps</h3>
-						<p><a href="https://developers.google.com/maps/documentation/javascript/" target="_blank">Google Maps API</a></p>
-                		<code>
-							centerLng: 0<br>
-							centerLat: 0<br>
-							data: 'cities.json'<br>
-							width: 550<br>
-							height: 500<br>
-							zoom: 1<br>
-							markImage: 'image.png'<br>
-							markShadow: 'shadow.png'<br>
-							markAnimation: null<br>
-							mapTypeId: 'ROADMAP'<br>
-							mapTypeControl: false<br>
-							mapTypeControlOptions: 'DEFAULT'<br>
-							zoomControl: false<br>
-							zoomControlOptions: 'DEFAULT'<br>
-							panControl: false<br>
-							scaleControl: false<br>
-							overviewMapControl: false<br>
-							streetViewControl: false<br>
-							geoLocCheck: false,<br>
-							geoLocMessage: "You are here"
-						</code>
-	                </div>
-	            </div>
-	        </div>
-
-	        <div class="pure-g-r content-ribbon">
-	            <div class="pure-u-2-3">
-	                <div class="l-box">
-	                    <h4 class="content-subhead"><a name="data">Data file</a></h4>
-
-	                    <h3>The JSON object</h3>
-	                    <code>
-							{"places": {"city": [{<br>
-							"name":"London",<br>
-							"lng":"51.500152",<br>
-							"lat":"-0.126236",<br>
-							"country":"United Kingdom"<br>
-							"info":"London is the capital city of England"
-							}]}}
-						</code>
-	                </div>
-	            </div>
-
-	            <div class="pure-u-1-3">
-	                <div class="l-box">
-	                    <div id="map_canvas_4"></div>
-	                </div>
-	            </div>
-	        </div>
-    	</div>
-
-		<div class="footer">
-	        All rights reserved! <a href="http://github.com/microtroll">microtroll</a> &copy; 2013
-	    </div>
-
-	</div>
+	</section>
 
 	<!-- Scripts --> 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 	<script src="//maps.googleapis.com/maps/api/js?sensor=true"></script>
+	<script src="lib/kraken.js"></script>
 	<script src="jquery.travelmap.js"></script>
 
 	<script>
@@ -170,9 +116,9 @@
 				zoomControl: true,
 				zoomControlOptions: 'SMALL',
 				streetViewControl: true,
-				height: 300,
-				width: 450,
-				zoom: 6,
+				height: 250,
+				width: 400,
+				zoom: 7,
 				geoLocCheck: true
 			});
 
@@ -186,12 +132,6 @@
 				width: 400,
 				zoom: 8,
 				geoLocCheck: true
-			});
-
-			$('#map_canvas_4').travelmap({
-				height: 250,
-				width: 400,
-				streetViewControl: true
 			});
 		});
 	</script>

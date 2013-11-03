@@ -1,4 +1,4 @@
-/*
+/**
  * Travelmap - jQuery Plugin
  * Add the countries and cities where have you been
  *
@@ -6,7 +6,7 @@
  *
  * Copyright (c) 2013 microtroll
  *
- * Version: 1.9 (02/10/2013)
+ * Version: 1.9 (03/11/2013)
  * Requires: jQuery v2+
  *
  * Dual licensed under the MIT and GPL licenses:
@@ -15,6 +15,7 @@
  */
 
 (function($) {
+	'use strict';
 
 	$.fn.travelmap = function(settings) {
 
@@ -38,7 +39,7 @@
 			overviewMapControl: false,
 			streetViewControl: false,
 			geoLocCheck: false,
-			geoLocMessage: "You are here",
+			geoLocMessage: 'You are here',
 			scrollwheel: true,
 			draggable: true
 		};
@@ -146,9 +147,7 @@
 					);
 
 					/* infoboxes options */
-					var content = '<div class="content_' + data.places.city[i].id + '"><div id="siteNotice"></div>' + 
-						'<h2 id="firstHeading" class="firstHeading">' + data.places.city[i].name + ', ' + data.places.city[i].country + '</h2>' +
-						'<div id="bodyContent"><p>' + data.places.city[i].info + '</p></div></div>';
+					var content = '<div class="content_' + data.places.city[i].id + '"><div id="siteNotice"></div>' + '<h2 id="firstHeading" class="firstHeading">' + data.places.city[i].name + ', ' + data.places.city[i].country + '</h2>' + '<div id="bodyContent"><p>' + data.places.city[i].info + '</p></div></div>';
 					boxes[i] = new google.maps.InfoWindow({
 						content: content
 					});
@@ -179,6 +178,6 @@
 			height: o.height
 		});
 
-	}
+	};
 
 })(jQuery);
