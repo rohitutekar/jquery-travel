@@ -1,13 +1,19 @@
 var config = module.exports;
 
 config["Travelmap"] = {
-    environment: "browser",
-    sources: [
-        "lib/jquery.min.js",
-        "https://maps.googleapis.com/maps/api/js?sensor=true",
-        "jquery.travelmap.js"
-    ],
-    tests: [
-        "test/*-test.js"
-    ]
+	extensions: [
+		require("buster-html-doc")
+	],
+	environment: "browser",
+	rootPath: "./",
+	libs: [
+		"lib/jquery.min.js",
+		"lib/gmaps.js"
+	],
+	sources: [
+		"jquery.travelmap.js"
+	],
+	tests: [
+		"test/*-test.js"
+	]
 };

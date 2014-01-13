@@ -1,122 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+	<meta charset="utf-8">
+	<title>Travelmap</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-    <title>Travelmap</title>
-    <meta name="description" content="Pin your visited cities and countries on Google map with jQuery">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="lib/kraken.css" type="text/css">
-
-    <style>
-		#map_canvas_1,
-		#map_canvas_2,
-		#map_canvas_3 {
-			margin-bottom: 15px;
-		}
-
-		/* Bugfix for Kraken's img max-width */
-		#map_canvas_1 img,
-		#map_canvas_2 img,
-		#map_canvas_3 img {
-			max-width: 1100px;
-		}
-    </style>
-
+	<!-- Styles -->
+	<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="jquery.roster.css">
+	<style>
+		body {font-family: 'Ubuntu', sans-serif;}
+		h1 small {color: #bbb;}
+		code {border-left: 5px solid #aaa; padding: 10px; width: 650px; background: #f6f6f6; display: block;}
+	</style>
 </head>
-
 <body>
 
-	<section class="container">
+	<header>
 
-		<h1>Travelmap v1.9.1</h1>
+		<h1>
+			Travelmap
+			<small>Pin your visited cities and countries on Google map with jQuery</small>
+		</h1>
 
-		<article>
-			<h3>How to use the plugin</h3>
-			<div id="map_canvas_1"></div>
-	        <p>Include the script, the Google API and jQuery framework then use the following options.</p>
-	        <p>Add <code>&languege=YOUR_COUNTRY_ISO</code> parameter to maps API to load the map in your language.</p>
-			<code>
-				&lt;script src="<strong>//maps.googleapis.com/maps/api/js?sensor=false&language=en</strong>"&gt;&lt;/script&gt;<br>
-				&lt;script src="<strong>//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js</strong>"&gt;&lt;/script&gt;<br>
-				&lt;script src="<Strong>jquery.travelmap.js</strong>"&gt;&lt;/script&gt;
-			</code>
-			<p>Select an element and set up the script but be careful it only usable with id-s because of how the Google API works.</p>
-			<code>
-				$('#map_canvas').travelmap();
-			</code>
-		</article>
+	</header>
+
+	<section>
+
+		<h3>Demo</h3>
+
+		<!-- DEMO -->
+		<div id="map_canvas_1"></div>
+		<!-- /DEMO -->
+
+		<h3>How to use</h3>
+		<p>Include the script, the Google API and jQuery then use the following options.</p>
+		<p>Add <code>&languege=YOUR_COUNTRY_ISO</code> parameter to maps API to load the map in your language.</p>
+		<pre><code>&lt;script src="<strong>//maps.googleapis.com/maps/api/js?sensor=false&language=en</strong>"&gt;&lt;/script&gt;<br>
+&lt;script src="<strong>//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js</strong>"&gt;&lt;/script&gt;<br>
+&lt;script src="<Strong>jquery.travelmap.js</strong>"&gt;&lt;/script&gt;</code></pre>
+
+		<p>Select an element and set up the script but be careful it only usable with id-s because of how the Google API works.</p>
+		<code>
+			$('#map_canvas').travelmap();
+		</code>
 
 		<h3>Highly customizable maps</h3>
-		<article>
-			<div id="map_canvas_2"></div>
-			<p><a href="https://developers.google.com/maps/documentation/javascript/" target="_blank">Google Maps API</a></p>
-			<code>
-				centerLng: 0<br>
-				centerLat: 0<br>
-				data: 'cities.json'<br>
-				width: 550<br>
-				height: 500<br>
-				zoom: 1<br>
-				markImage: 'image.png'<br>
-				markShadow: 'shadow.png'<br>
-				markAnimation: null<br>
-				mapTypeId: 'ROADMAP'<br>
-				mapTypeControl: false<br>
-				mapTypeControlOptions: 'DEFAULT'<br>
-				zoomControl: false<br>
-				zoomControlOptions: 'DEFAULT'<br>
-				panControl: false<br>
-				scaleControl: false<br>
-				overviewMapControl: false<br>
-				streetViewControl: false<br>
-				geoLocCheck: false<br>
-				geoLocMessage: 'You are here',<br>
-				theme: 'greyscale'
-			</code>
-		</article>
+		<div id="map_canvas_2"></div>
+		<p><a href="https://developers.google.com/maps/documentation/javascript/" target="_blank">Google Maps API</a></p>
+		<pre><code>$('#map_canvas').travelmap({
+	centerLng: 0,
+	centerLat: 0,
+	data: 'cities.json',
+	width: 550,
+	height: 500,
+	zoom: 1,
+	markImage: 'image.png',
+	markShadow: 'shadow.png',
+	markAnimation: null,
+	mapTypeId: 'ROADMAP',
+	mapTypeControl: false,
+	mapTypeControlOptions: 'DEFAULT',
+	zoomControl: false,
+	zoomControlOptions: 'DEFAULT',
+	panControl: false,
+	scaleControl: false,
+	overviewMapControl: false,
+	streetViewControl: false,
+	geoLocCheck: false,
+	geoLocMessage: 'You are here',
+	theme: 'greyscale'
+});</code></pre>
 
-		<article>
-			<h3>Select a theme or specify your own</h3>
-			<div id="map_canvas_3"></div>
-			<p><a href="http://snazzymaps.com/" target="_blank">Snazzy Maps</a></p>
-			<code>
-				theme: 'neutral-blue'<br>
-				theme: 'midnight-commander'<br>
-				theme: 'gowalla'<br>
-				theme: 'bright-and-bubbly'<br>
-				theme: 'greyscale'<br>
-				theme: 'red-alert'<br>
-			</code>
-		</article>
+		<h3>Select a theme or specify your own</h3>
+		<div id="map_canvas_3"></div>
+		<p><a href="http://snazzymaps.com/" target="_blank">Snazzy Maps</a></p>
+		<pre><code>
+theme: 'neutral-blue'
+theme: 'midnight-commander'
+theme: 'gowalla'
+theme: 'bright-and-bubbly'
+theme: 'greyscale'
+theme: 'red-alert'
+		</code></pre>
 
-		<article>
-			<h3>The JSON object</h3>
-			<div id="map_canvas_4"></div>
-	        <code>
-				{"places": {"city": [{<br>
-				"name":"London",<br>
-				"lng":"51.500152",<br>
-				"lat":"-0.126236",<br>
-				"country":"United Kingdom"<br>
-				"info":"London is the capital city of England"
-				}]}}
-			</code>
-		</article>
-
-		<p>All rights reserved! <a href="http://github.com/microtroll">microtroll</a> &copy; 2013</p>
+		<h3>The JSON object</h3>
+		<div id="map_canvas_4"></div>
+        <pre><code>{
+	"places": {
+		"city": [
+			{
+				"name": "London",
+				"lng": "51.500152",
+				"lat": "-0.126236",
+				"country": "United Kingdom"
+				"info": "London is the capital city of England"
+			}
+		]
+	}
+}</code></pre>
 
 	</section>
 
 	<!-- Scripts --> 
 	<script src="lib/jquery.min.js"></script>
 	<script src="//maps.googleapis.com/maps/api/js?sensor=true"></script>
-	<script src="lib/kraken.js"></script>
 	<script src="jquery.travelmap.js"></script>
 
 	<script>
