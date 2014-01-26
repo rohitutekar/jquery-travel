@@ -6,7 +6,7 @@
  *
  * Copyright (c) 2013 microtroll
  *
- * Version: 1.9 (03/11/2013)
+ * Version: 1.9 (26/01/2014)
  * Requires: jQuery v2+
  *
  * Dual licensed under the MIT and GPL licenses:

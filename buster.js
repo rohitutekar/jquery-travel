@@ -8,7 +8,8 @@ config["Travelmap"] = {
 	rootPath: "./",
 	libs: [
 		"lib/jquery.min.js",
-		"lib/gmaps.js"
+        "lib/gmaps.js",
+        "lib/main.js"
 	],
 	sources: [
 		"jquery.travelmap.js"

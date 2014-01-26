@@ -3,7 +3,7 @@ var assert = buster.assert;
 buster.testCase("Travelmap", {
     setUp: function () {
     	/*:DOC map = <div id="map"></div> */
-
+        
         this.canvas = $(this.map).travelmap({
 			markAnimation: 'DROP',
 			mapTypeControl: true,
@@ -18,7 +18,7 @@ buster.testCase("Travelmap", {
 		});
     },
 
-    "is defined": function () {
+    "test fn is defined": function () {
         assert.defined($.travelmap());
     }
 
