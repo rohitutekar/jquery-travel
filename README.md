@@ -9,8 +9,8 @@ Add `&languege=YOUR_COUNTRY_ISO` parameter to maps API to load the map in your l
 
 ```html
 <script src="//maps.googleapis.com/maps/api/js?sensor=false&language=en"></script>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-<script src="jquery.travelmap.js"></script>
+<script src="jquery.min.js"></script>
+<script src="jquery.travelmap.min.js"></script>
 ```
 
 Select an element and set up the script but be careful it only usable with id-s because of how the Google API works.
