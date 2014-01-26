@@ -1,12 +1,12 @@
 /**
  * Travelmap - jQuery Plugin
- * Add the countries and cities where have you been
+ * Pin the countries and cities where have you been
  *
  * Examples and documentation at: https://github.com/microtroll/jquery-travel
  *
  * Copyright (c) 2013 microtroll
  *
- * Version: 1.9 (26/01/2014)
+ * Version: 1.9
  * Requires: jQuery v2+
  *
  * Dual licensed under the MIT and GPL licenses:
@@ -18,7 +18,7 @@
 	'use strict';
 
 	$.fn.travelmap = function(settings) {
-
+        
 		var o = {
 			centerLng: 0,
 			centerLat: 0,
@@ -82,16 +82,28 @@
 
 		// set center to users location if enabled
 		var pos = new google.maps.LatLng(o.centerLng, o.centerLat);
+
 		if (navigator.geolocation && o.geoLocCheck === true) {
 			navigator.geolocation.getCurrentPosition(function(position) {
-				pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-				var infowindow = new google.maps.InfoWindow({
-					map: map,
-					position: pos,
-					content: o.geoLocMessage
-				});
-			});
-		}
+                var geocoder = new google.maps.Geocoder();
+                pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+                if (geocoder) {
+                    geocoder.geocode({'latLng': pos}, function (results, status) {
+                        if (status === google.maps.GeocoderStatus.OK) {
+                            var infowindow = new google.maps.InfoWindow({
+                                map: map,
+                                position: results[0].geometry.location,
+                                content: o.geoLocMessage
+                            });
+                            map.setCenter(results[0].geometry.location);
+                        } else {
+                            throw new Error("Geocoding failed: " + status);
+                        }
+                    });
+                }
+            });
+        }
+                
 
 		// themes
 		var theme;
@@ -120,6 +132,7 @@
 			mapOptions = {
 				zoom: o.zoom,
 				center: pos,
+                useCurrentLocation : true,
 				mapTypeId: mapTypeId,
 				mapTypeControl: o.mapTypeControl,
 				mapTypeControlOptions: {
