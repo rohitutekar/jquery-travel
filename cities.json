@@ -1,335 +1,292 @@
 {
-	"places":
-		{
-			"city": [
-				{
-					"id": "1",
-					"name":"London",
-					"lng":"51.500152",
-					"lat":"-0.126236",
-					"country":"United Kingdom",
-					"info":"Lorem ipsum"
-				},
-				{
-					"id": "2",
-					"name":"Brighton",
-					"lng":"50.819522",
-					"lat":"-0.13642",
-					"country":"United Kingdom",
-					"info":""
-				},
-				{
-					"id": "3",
-					"name":"Guildford",
-					"lng":"51.23622",
-					"lat":"-0.570409",
-					"country":"United Kingdom",
-					"info":""
-				},
-				{
-					"id": "4",
-					"name":"Amsterdam",
-					"lng":"52.370216",
-					"lat":"4.895168",
-					"country":"Netherlands",
-					"info":""
-				},
-				{
-					"id": "5",
-					"name":"Mombasa",
-					"lng":"-4.05",
-					"lat":"39.666667",
-					"country":"Kenya",
-					"info":""
-				},
-				{
-					"id": "6",
-					"name":"Budapest",
-					"lng":"47.498406",
-					"lat":"19.040758",
-					"country":"Hungary",
-					"info":""
-				},
-				{
-					"id": "7",
-					"name":"Prague",
-					"lng":"50.087811",
-					"lat":"14.42046",
-					"country":"Czech Republic",
-					"info":""
-				},
-				{
-					"id": "8",
-					"name":"Montreal",
-					"lng":"45.508889",
-					"lat":"-73.554167",
-					"country":"Canada",
-					"info":""
-				},
-				{
-					"id": "9",
-					"name":"Cairo",
-					"lng":"30.064742",
-					"lat":"31.249509",
-					"country":"Egypt",
-					"info":""
-				},
-				{
-					"id": "10",
-					"name":"Luxor",
-					"lng":"25.7006",
-					"lat":"32.6392",
-					"country":"Egypt",
-					"info":""
-				},
-				{
-					"id": "11",
-					"name":"Hurgada",
-					"lng":"27.257778",
-					"lat":"33.811667",
-					"country":"Egypt",
-					"info":""
-				},
-				{
-					"id": "12",
-					"name":"Gibraltar",
-					"lng":"36.137741",
-					"lat":"-5.345374",
-					"country":"Gibraltar",
-					"info":""
-				},
-				{
-					"id": "13",
-					"name":"Palma de Mallorca",
-					"lng":"39.569506",
-					"lat":"2.649966",
-					"country":"Spain",
-					"info":""
-				},
-				{
-					"id": "14",
-					"name":"Porto Cristo",
-					"lng":"39.544666",
-					"lat":"3.337757",
-					"country":"Spain",
-					"info":""
-				},
-				{
-					"id": "15",
-					"name":"Mijas",
-					"lng":"36.595699",
-					"lat":"-4.637619",
-					"country":"Spain",
-					"info":""
-				},
-				{
-					"id": "16",
-					"name":"Granada",
-					"lng":"37.176487",
-					"lat":"-3.597929",
-					"country":"Spain",
-					"info":""
-				},
-				{
-					"id": "17",
-					"name":"Torremolinos",
-					"lng":"36.621787",
-					"lat":"-4.500273",
-					"country":"Spain",
-					"info":""
-				},
-				{
-					"id": "18",
-					"name":"Cala Millor",
-					"lng":"39.605481",
-					"lat":"3.386224",
-					"country":"Spain",
-					"info":""
-				},
-				{
-					"id": "19",
-					"name":"Paris",
-					"lng":"48.856614",
-					"lat":"2.352222",
-					"country":"France",
-					"info":""
-				},
-				{
-					"id": "20",
-					"name":"Bibione",
-					"lng":"45.6362",
-					"lat":"13.06147",
-					"country":"Italy",
-					"info":""
-				},
-				{
-					"id": "21",
-					"name":"Rimini",
-					"lng":"44.060917",
-					"lat":"12.566301",
-					"country":"Italy",
-					"info":""
-				},
-				{
-					"id": "22",
-					"name":"Venice",
-					"lng":"45.434336",
-					"lat":"12.338784",
-					"country":"Italy",
-					"info":""
-				},
-				{
-					"id": "23",
-					"name":"Jesolo",
-					"lng":"45.536585",
-					"lat":"12.639331",
-					"country":"Italy",
-					"info":""
-				},
-				{
-					"id": "24",
-					"name":"Lignano",
-					"lng":"45.690989",
-					"lat":"13.138748",
-					"country":"Italy",
-					"info":""
-				},
-				{
-					"id": "25",
-					"name":"Cliffs of Moher",
-					"lng":"52.936197",
-					"lat":"-9.466135",
-					"country":"Ireland",
-					"info":""
-				},
-				{
-					"id": "26",
-					"name":"Dublin",
-					"lng":"53.344104",
-					"lat":"-6.267494",
-					"country":"Ireland",
-					"info":""
-				},
-				{
-					"id": "27",
-					"name":"Monastir",
-					"lng":"35.77718",
-					"lat":"10.8261",
-					"country":"Tunis",
-					"info":""
-				},
-				{
-					"id": "28",
-					"name":"Sousse",
-					"lng":"35.833333",
-					"lat":"10.633333",
-					"country":"Tunis",
-					"info":""
-				},
-				{
-					"id": "29",
-					"name":"Porec",
-					"lng":"45.226697",
-					"lat":"13.597752",
-					"country":"Croatia",
-					"info":""
-				},
-				{
-					"id": "30",
-					"name":"Rovinj",
-					"lng":"45.080841",
-					"lat":"13.638351",
-					"country":"Croatia",
-					"info":""
-				},
-				{
-					"id": "31",
-					"name":"Antalya",
-					"lng":"36.88414",
-					"lat":"30.70563",
-					"country":"Turkey",
-					"info":""
-				},
-				{
-					"id": "32",
-					"name":"Alanya",
-					"lng":"36.560139",
-					"lat":"32.002121",
-					"country":"Turkey",
-					"info":""
-				},
-				{
-					"id": "33",
-					"name":"Vienna",
-					"lng":"48.208174",
-					"lat":"16.373819",
-					"country":"Austria",
-					"info":""
-				},
-				{
-					"id": "34",
-					"name":"Schladming",
-					"lng":"47.394203",
-					"lat":"13.68544",
-					"country":"Austria",
-					"info":""
-				},
-				{
-					"id": "35",
-					"name":"Puchberg",
-					"lng":"47.79073",
-					"lat":"15.9133",
-					"country":"Austria",
-					"info":""
-				},
-				{
-					"id": "36",
-					"name":"Miercurea-Ciuc",
-					"lng":"46.3640",
-					"lat":"25.803",
-					"country":"Romania",
-					"info":""
-				},
-				{
-					"id": "37",
-					"name":"Lisbon",
-					"lng":"38.706932",
-					"lat":"-9.135632",
-					"country":"Portugal",
-					"info":"Lisbon is the capital city and largest city of Portugal with a population of 547,631."
-				},
-				{
-					"id": "38",
-					"name":"Rome",
-					"lng":"41.906",
-					"lat":"12.480",
-					"country":"Italy",
-					"info":""
-				},
-				{
-					"id": "39",
-					"name":"Bergen",
-					"lng":"60.409",
-					"lat":"5.320",
-					"country":"Norway",
-					"info":""
-				},
-				{
-					"id": "40",
-					"name":"Cork",
-					"lng":"51.9019",
-					"lat":"-8.487",
-					"country":"Ireland",
-					"info":""
-				},
-				{
-					"id": "41",
-					"name":"Holyhead",
-					"lng":"53.3119",
-					"lat":"-4.6328",
-					"country":"United Kingdom",
-					"info":""
-				}
-			]
-	}
+  "places": {
+    "city": [{
+      "id": "1",
+      "name": "London",
+      "lng": "51.500152",
+      "lat": "-0.126236",
+      "country": "United Kingdom",
+      "info": "Lorem ipsum"
+    }, {
+      "id": "2",
+      "name": "Brighton",
+      "lng": "50.819522",
+      "lat": "-0.13642",
+      "country": "United Kingdom",
+      "info": ""
+    }, {
+      "id": "3",
+      "name": "Guildford",
+      "lng": "51.23622",
+      "lat": "-0.570409",
+      "country": "United Kingdom",
+      "info": ""
+    }, {
+      "id": "4",
+      "name": "Amsterdam",
+      "lng": "52.370216",
+      "lat": "4.895168",
+      "country": "Netherlands",
+      "info": ""
+    }, {
+      "id": "5",
+      "name": "Mombasa",
+      "lng": "-4.05",
+      "lat": "39.666667",
+      "country": "Kenya",
+      "info": ""
+    }, {
+      "id": "6",
+      "name": "Budapest",
+      "lng": "47.498406",
+      "lat": "19.040758",
+      "country": "Hungary",
+      "info": ""
+    }, {
+      "id": "7",
+      "name": "Prague",
+      "lng": "50.087811",
+      "lat": "14.42046",
+      "country": "Czech Republic",
+      "info": ""
+    }, {
+      "id": "8",
+      "name": "Montreal",
+      "lng": "45.508889",
+      "lat": "-73.554167",
+      "country": "Canada",
+      "info": ""
+    }, {
+      "id": "9",
+      "name": "Cairo",
+      "lng": "30.064742",
+      "lat": "31.249509",
+      "country": "Egypt",
+      "info": ""
+    }, {
+      "id": "10",
+      "name": "Luxor",
+      "lng": "25.7006",
+      "lat": "32.6392",
+      "country": "Egypt",
+      "info": ""
+    }, {
+      "id": "11",
+      "name": "Hurgada",
+      "lng": "27.257778",
+      "lat": "33.811667",
+      "country": "Egypt",
+      "info": ""
+    }, {
+      "id": "12",
+      "name": "Gibraltar",
+      "lng": "36.137741",
+      "lat": "-5.345374",
+      "country": "Gibraltar",
+      "info": ""
+    }, {
+      "id": "13",
+      "name": "Palma de Mallorca",
+      "lng": "39.569506",
+      "lat": "2.649966",
+      "country": "Spain",
+      "info": ""
+    }, {
+      "id": "14",
+      "name": "Porto Cristo",
+      "lng": "39.544666",
+      "lat": "3.337757",
+      "country": "Spain",
+      "info": ""
+    }, {
+      "id": "15",
+      "name": "Mijas",
+      "lng": "36.595699",
+      "lat": "-4.637619",
+      "country": "Spain",
+      "info": ""
+    }, {
+      "id": "16",
+      "name": "Granada",
+      "lng": "37.176487",
+      "lat": "-3.597929",
+      "country": "Spain",
+      "info": ""
+    }, {
+      "id": "17",
+      "name": "Torremolinos",
+      "lng": "36.621787",
+      "lat": "-4.500273",
+      "country": "Spain",
+      "info": ""
+    }, {
+      "id": "18",
+      "name": "Cala Millor",
+      "lng": "39.605481",
+      "lat": "3.386224",
+      "country": "Spain",
+      "info": ""
+    }, {
+      "id": "19",
+      "name": "Paris",
+      "lng": "48.856614",
+      "lat": "2.352222",
+      "country": "France",
+      "info": ""
+    }, {
+      "id": "20",
+      "name": "Bibione",
+      "lng": "45.6362",
+      "lat": "13.06147",
+      "country": "Italy",
+      "info": ""
+    }, {
+      "id": "21",
+      "name": "Rimini",
+      "lng": "44.060917",
+      "lat": "12.566301",
+      "country": "Italy",
+      "info": ""
+    }, {
+      "id": "22",
+      "name": "Venice",
+      "lng": "45.434336",
+      "lat": "12.338784",
+      "country": "Italy",
+      "info": ""
+    }, {
+      "id": "23",
+      "name": "Jesolo",
+      "lng": "45.536585",
+      "lat": "12.639331",
+      "country": "Italy",
+      "info": ""
+    }, {
+      "id": "24",
+      "name": "Lignano",
+      "lng": "45.690989",
+      "lat": "13.138748",
+      "country": "Italy",
+      "info": ""
+    }, {
+      "id": "25",
+      "name": "Cliffs of Moher",
+      "lng": "52.936197",
+      "lat": "-9.466135",
+      "country": "Ireland",
+      "info": ""
+    }, {
+      "id": "26",
+      "name": "Dublin",
+      "lng": "53.344104",
+      "lat": "-6.267494",
+      "country": "Ireland",
+      "info": ""
+    }, {
+      "id": "27",
+      "name": "Monastir",
+      "lng": "35.77718",
+      "lat": "10.8261",
+      "country": "Tunis",
+      "info": ""
+    }, {
+      "id": "28",
+      "name": "Sousse",
+      "lng": "35.833333",
+      "lat": "10.633333",
+      "country": "Tunis",
+      "info": ""
+    }, {
+      "id": "29",
+      "name": "Porec",
+      "lng": "45.226697",
+      "lat": "13.597752",
+      "country": "Croatia",
+      "info": ""
+    }, {
+      "id": "30",
+      "name": "Rovinj",
+      "lng": "45.080841",
+      "lat": "13.638351",
+      "country": "Croatia",
+      "info": ""
+    }, {
+      "id": "31",
+      "name": "Antalya",
+      "lng": "36.88414",
+      "lat": "30.70563",
+      "country": "Turkey",
+      "info": ""
+    }, {
+      "id": "32",
+      "name": "Alanya",
+      "lng": "36.560139",
+      "lat": "32.002121",
+      "country": "Turkey",
+      "info": ""
+    }, {
+      "id": "33",
+      "name": "Vienna",
+      "lng": "48.208174",
+      "lat": "16.373819",
+      "country": "Austria",
+      "info": ""
+    }, {
+      "id": "34",
+      "name": "Schladming",
+      "lng": "47.394203",
+      "lat": "13.68544",
+      "country": "Austria",
+      "info": ""
+    }, {
+      "id": "35",
+      "name": "Puchberg",
+      "lng": "47.79073",
+      "lat": "15.9133",
+      "country": "Austria",
+      "info": ""
+    }, {
+      "id": "36",
+      "name": "Miercurea-Ciuc",
+      "lng": "46.3640",
+      "lat": "25.803",
+      "country": "Romania",
+      "info": ""
+    }, {
+      "id": "37",
+      "name": "Lisbon",
+      "lng": "38.706932",
+      "lat": "-9.135632",
+      "country": "Portugal",
+      "info": "Lisbon is the capital city and largest city of Portugal with a population of 547,631."
+    }, {
+      "id": "38",
+      "name": "Rome",
+      "lng": "41.906",
+      "lat": "12.480",
+      "country": "Italy",
+      "info": ""
+    }, {
+      "id": "39",
+      "name": "Bergen",
+      "lng": "60.409",
+      "lat": "5.320",
+      "country": "Norway",
+      "info": ""
+    }, {
+      "id": "40",
+      "name": "Cork",
+      "lng": "51.9019",
+      "lat": "-8.487",
+      "country": "Ireland",
+      "info": ""
+    }, {
+      "id": "41",
+      "name": "Holyhead",
+      "lng": "53.3119",
+      "lat": "-4.6328",
+      "country": "United Kingdom",
+      "info": ""
+    }]
+  }
 }

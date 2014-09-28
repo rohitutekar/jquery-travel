@@ -1,91 +1,76 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>Travelmap</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<!-- Styles -->
-	<link href='//fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
-	<style>
-		body {font-family: 'Ubuntu', sans-serif;}
-		h1 small {color: #bbb;}
-		code {border-left: 5px solid #aaa; padding: 10px; width: 650px; background: #f6f6f6; display: block;}
-	</style>
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery Travelmap</title>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="jquery.starz.css">
+
 </head>
+
 <body>
 
-	<header>
+	<div class="container">
 
-		<h1>
-			Travelmap
-			<small>Pin your visited cities and countries on Google map with jQuery</small>
-		</h1>
+		<div class="page-header">
+			<h1>jQuery Travelmap</h1>
+			<p class="lead">Pin your visited cities and countries on Google map with jQuery</p>
+		</div>
 
-	</header>
+		<div class="row">
+			<div class="col-md-7">
+				<h3>How to use</h3>
+				<p>Include the script, the Google API and jQuery then use the following options.</p>
+				<p>Add <code>&languege=YOUR_COUNTRY_ISO</code> parameter to maps API to load the map in your language.</p>
+				<pre><code>&lt;script src="<strong>//maps.googleapis.com/maps/api/js?sensor=false&language=en</strong>"&gt;&lt;/script&gt;<br>&lt;script src="<strong>//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js</strong>"&gt;&lt;/script&gt;<br>&lt;script src="<Strong>jquery.travelmap.js</strong>"&gt;&lt;/script&gt;</code></pre>
+				<p>Select an element and set up the script but be careful it only usable with id-s because of how the Google API works.</p>
+				<pre><code>$('#map_canvas').travelmap();</code></pre>
+			</div>
+			<div class="col-md-5">
+				<h3>Demo</h3>
+				<div id="map_canvas_1"></div>
+			</div>
+		</div>
 
-	<section>
+		<hr>
 
-		<h3>Demo</h3>
+		<div class="row">
+			<div class="col-md-7">
+				<h3>Highly customizable maps</h3>
+				<p><a href="//developers.google.com/maps/documentation/javascript/" target="_blank">Google Maps API</a></p>
+				<pre><code>$('#map_canvas').travelmap({<br>	centerLng: 0,<br>	centerLat: 0,<br>	data: 'cities.json',<br>	width: 550,<br>	height: 500,<br>	zoom: 1,<br>	markImage: 'image.png',<br>	markShadow: 'shadow.png',<br>	markAnimation: null,<br>	mapTypeId: 'ROADMAP',<br>	mapTypeControl: false,<br>	mapTypeControlOptions: 'DEFAULT',<br>	zoomControl: false,<br>	zoomControlOptions: 'DEFAULT',<br>	panControl: false,<br>	scaleControl: false,<br>	overviewMapControl: false,<br>	streetViewControl: false,<br>  geoLocCheck: false,<br>	geoLocMessage: 'You are here',<br>	theme: 'greyscale'<br>});</code></pre>
+			</div>
+			<div class="col-md-5">
+				<h3>Demo</h3>
+				<div id="map_canvas_2"></div>
+			</div>
+		</div>
 
-		<!-- DEMO -->
-		<div id="map_canvas_1"></div>
-		<!-- /DEMO -->
+		<hr>
 
-		<h3>How to use</h3>
-		<p>Include the script, the Google API and jQuery then use the following options.</p>
-		<p>Add <code>&languege=YOUR_COUNTRY_ISO</code> parameter to maps API to load the map in your language.</p>
-		<pre><code>&lt;script src="<strong>//maps.googleapis.com/maps/api/js?sensor=false&language=en</strong>"&gt;&lt;/script&gt;<br>
-&lt;script src="<strong>//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js</strong>"&gt;&lt;/script&gt;<br>
-&lt;script src="<Strong>jquery.travelmap.js</strong>"&gt;&lt;/script&gt;</code></pre>
+		<div class="row">
+			<div class="col-md-7">
+				<h3>Select a theme or specify your own</h3>
+				<p><a href="//snazzymaps.com/" target="_blank">Snazzy Maps</a></p>
+				<pre><code>theme: 'neutral-blue'<br>theme: 'midnight-commander'<br>theme: 'gowalla'<br>theme: 'bright-and-bubbly'<br>theme: 'greyscale'<br>theme: 'red-alert'</code></pre>
+			</div>
+			<div class="col-md-5">
+				<h3>Demo</h3>
+				<div id="map_canvas_3"></div>
+			</div>
+		</div>
 
-		<p>Select an element and set up the script but be careful it only usable with id-s because of how the Google API works.</p>
-		<code>
-			$('#map_canvas').travelmap();
-		</code>
+		<hr>
 
-		<h3>Highly customizable maps</h3>
-		<div id="map_canvas_2"></div>
-		<p><a href="//developers.google.com/maps/documentation/javascript/" target="_blank">Google Maps API</a></p>
-		<pre><code>$('#map_canvas').travelmap({
-	centerLng: 0,
-	centerLat: 0,
-	data: 'cities.json',
-	width: 550,
-	height: 500,
-	zoom: 1,
-	markImage: 'image.png',
-	markShadow: 'shadow.png',
-	markAnimation: null,
-	mapTypeId: 'ROADMAP',
-	mapTypeControl: false,
-	mapTypeControlOptions: 'DEFAULT',
-	zoomControl: false,
-	zoomControlOptions: 'DEFAULT',
-	panControl: false,
-	scaleControl: false,
-	overviewMapControl: false,
-	streetViewControl: false,
-	geoLocCheck: false,
-	geoLocMessage: 'You are here',
-	theme: 'greyscale'
-});</code></pre>
-
-		<h3>Select a theme or specify your own</h3>
-		<div id="map_canvas_3"></div>
-		<p><a href="//snazzymaps.com/" target="_blank">Snazzy Maps</a></p>
-		<pre><code>
-theme: 'neutral-blue'
-theme: 'midnight-commander'
-theme: 'gowalla'
-theme: 'bright-and-bubbly'
-theme: 'greyscale'
-theme: 'red-alert'
-		</code></pre>
-
-		<h3>The JSON object</h3>
-		<div id="map_canvas_4"></div>
-			<pre><code>{
+		<div class="row">
+			<div class="col-md-7">
+				<h3>The JSON object</h3>
+				<pre><code>{
 	"places": {
 		"city": [
 			{
@@ -98,17 +83,23 @@ theme: 'red-alert'
 		]
 	}
 }</code></pre>
+			</div>
+			<div class="col-md-5">
+				<h3>Demo</h3>
+				<div id="map_canvas_4"></div>
+			</div>
+		</div>
 
-	</section>
+	</div>
 
 	<!-- Scripts -->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="//maps.googleapis.com/maps/api/js?sensor=true"></script>
 	<script src="jquery.travelmap.js"></script>
 
 	<script>
 		$(function() {
-			"use strict";
+			'use strict';
 
 			// Travelmap
 			$('#map_canvas_1').travelmap({

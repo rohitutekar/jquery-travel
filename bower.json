@@ -1,7 +1,0 @@
-{
-	"name":  "Travelmap",
-	"version": "1.9.2",
-	"dependencies": {
-		"jquery": "latest"
-	}
-}
