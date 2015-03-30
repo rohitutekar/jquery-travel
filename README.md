@@ -9,7 +9,7 @@ Include the script, the Google API and jQuery then use the following options.
 Add `&languege=YOUR_COUNTRY_ISO` parameter to maps API to load the map in your language.
 
 ```html
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="//maps.googleapis.com/maps/api/js?sensor=false&language=en"></script>
 <script src="jquery.travelmap.js"></script>
 ```
@@ -26,27 +26,26 @@ $('#map_canvas').travelmap();
 
 ```javascript
 $('#map_canvas').travelmap({
-	centerLng: 0,
-	centerLat: 0,
-	data: 'cities.json',
-	width: 550,
-	height: 500,
-	zoom: 1,
-	markImage: 'image.png',
-	markShadow: 'shadow.png',
-	markAnimation: null,
-	mapTypeId: 'ROADMAP',
-	mapTypeControl: false,
-	mapTypeControlOptions: 'DEFAULT',
-	zoomControl: false,
-	zoomControlOptions: 'DEFAULT',
-	panControl: false,
-	scaleControl: false,
-	overviewMapControl: false,
-	streetViewControl: false,
-	geoLocCheck: false,
-	geoLocMessage: 'You are here',
-	theme: 'greyscale'
+  data: 'cities.json',
+  center: [0, 0], // lng, lat
+  width: 550,
+  height: 500,
+  zoom: 1,
+  markImage: 'image.png',
+  markShadow: 'shadow.png',
+  markAnimation: null,
+  mapTypeId: 'ROADMAP',
+  mapTypeControl: false,
+  mapTypeControlOptions: 'DEFAULT',
+  zoomControl: false,
+  zoomControlOptions: 'DEFAULT',
+  panControl: false,
+  scaleControl: false,
+  overviewMapControl: false,
+  streetViewControl: false,
+  geoLocCheck: false,
+  geoLocMessage: 'You are here',
+  theme: 'greyscale'
 });
 ```
 
@@ -67,16 +66,14 @@ theme: 'red-alert'
 
 ```javascript
 {
-	"places": {
-		"city": [
-			{
-				"name":"London",
-				"lng":"51.500152",
-				"lat":"-0.126236",
-				"country":"United Kingdom"
-				"info":"London is the capital city of England"
-			}
-		]
-	}
+  "places": [
+    {
+      "name":"London",
+      "lng":"51.500152",
+      "lat":"-0.126236",
+      "country":"United Kingdom"
+      "info":"London is the capital city of England"
+    }
+ ]
 }
 ```

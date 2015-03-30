@@ -1,12 +1,12 @@
 /**
  * Travelmap - jQuery Plugin
- * Pin the countries and cities where have you been
+ * Pin the countries and cities on the map
  *
  * Examples and documentation at: https://github.com/microtroll/jquery-travel
  *
  * Copyright (c) 2014 microtroll
  *
- * Version: 1.9.1
+ * Version: 1.9.6
  * Requires: jQuery v2+
  *
  * Dual licensed under the MIT and GPL licenses:
@@ -20,9 +20,8 @@
   $.fn.travelmap = function(settings) {
 
     var o = {
-      centerLng: 0,
-      centerLat: 0,
       data: 'cities.json',
+      center: [0, 0], // lng, lat
       width: 550,
       height: 500,
       zoom: 1,
@@ -81,7 +80,7 @@
     }
 
     // set center to users location if enabled
-    var pos = new google.maps.LatLng(o.centerLng, o.centerLat);
+    var pos = new google.maps.LatLng(o.center[0], o.center[1]);
 
     if (navigator.geolocation && o.geoLocCheck === true) {
       navigator.geolocation.getCurrentPosition(function(position) {
@@ -90,14 +89,14 @@
         if (geocoder) {
           geocoder.geocode({
             'latLng': pos
-          }, function(results, status) {
+          }, function(resp, status) {
             if (status === google.maps.GeocoderStatus.OK) {
               var infowindow = new google.maps.InfoWindow({
                 map: map,
-                position: results[0].geometry.location,
+                position: resp[0].geometry.location,
                 content: o.geoLocMessage
               });
-              map.setCenter(results[0].geometry.location);
+              map.setCenter(resp[0].geometry.location);
             } else {
               throw new Error("Geocoding failed: " + status);
             }
@@ -580,8 +579,7 @@
     }
 
     // basic options
-    var mapObject = $(this).attr('id'),
-      mapOptions = {
+    var mapOptions = {
         zoom: o.zoom,
         center: pos,
         useCurrentLocation: true,
@@ -602,7 +600,7 @@
         draggable: o.draggable,
         styles: theme
       },
-      map = new google.maps.Map(document.getElementById(mapObject), mapOptions);
+      map = new google.maps.Map(document.getElementById(this.get(0).getAttribute('id')), mapOptions);
 
     // global variables
     var locations = [],
@@ -614,11 +612,11 @@
       url: o.data,
       dataType: 'json',
       success: function(data) {
-        for (var i in data.places.city) {
 
-          locations[i] = new google.maps.LatLng(data.places.city[i].lng, data.places.city[i].lat);
+        data.places.forEach(function(p, i) {
+          locations[i] = new google.maps.LatLng(p.lng, p.lat);
 
-          /* markers options */
+          // markers options
           var shape = {
             coord: [10, 0, 11, 1, 12, 2, 12, 3, 12, 4, 12, 5, 12, 6, 12, 7, 12, 8, 11, 9, 10, 10, 10, 11, 9, 12, 9, 13, 8, 14, 8, 15, 7, 15, 7, 14, 6, 13, 6, 12, 5, 11, 5, 10, 4, 9, 3, 8, 3, 7, 3, 6, 3, 5, 3, 4, 3, 3, 3, 2, 4, 1, 5, 0, 10, 0],
             type: 'poly'
@@ -635,15 +633,15 @@
             new google.maps.Point(8, 16)
           );
 
-          /* infoboxes options */
-          var content = '<div class="content_' + data.places.city[i].id + '"><div id="siteNotice"></div>' + '<h2 id="firstHeading" class="firstHeading">' + data.places.city[i].name + ', ' + data.places.city[i].country + '</h2>' + '<div id="bodyContent"><p>' + data.places.city[i].info + '</p></div></div>';
+          // infoboxes options
+          var content = '<div class="content_' + p.id + '"><div id="siteNotice"></div>' + '<h2 id="firstHeading" class="firstHeading">' + p.name + ', ' + p.country + '</h2>' + '<div id="bodyContent"><p>' + p.info + '</p></div></div>';
           boxes[i] = new google.maps.InfoWindow({
             content: content
           });
 
           markers[i] = new google.maps.Marker({
             animation: markAnimation,
-            title: data.places.city[i].name + ', ' + data.places.city[i].country,
+            title: p.name + ', ' + p.country,
             icon: image,
             shadow: shadow,
             shape: shape,
@@ -655,7 +653,8 @@
           google.maps.event.addListener(markers[i], 'click', function() {
             boxes[this._index].open(map, markers[this._index]);
           });
-        }
+
+        });
       },
       error: function() {
         throw new Error('Error while loading JSON object!');
