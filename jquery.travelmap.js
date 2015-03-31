@@ -614,7 +614,7 @@
       success: function(data) {
 
         data.places.forEach(function(p, i) {
-          locations[i] = new google.maps.LatLng(p.lng, p.lat);
+          locations[i] = new google.maps.LatLng(p.lat, p.lng);
 
           // markers options
           var shape = {
