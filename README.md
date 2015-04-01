@@ -71,7 +71,7 @@ theme: 'red-alert'
       "name":"London",
       "lng":"51.500152",
       "lat":"-0.126236",
-      "country":"United Kingdom"
+      "country":"United Kingdom",
       "info":"London is the capital city of England"
     }
  ]
