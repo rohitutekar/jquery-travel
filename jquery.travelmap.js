@@ -1,12 +1,12 @@
 /**
  * Travelmap - jQuery Plugin
- * Pin the countries and cities on the map
+ * Pin anything on Google map with jQuery
  *
  * Examples and documentation at: https://github.com/microtroll/jquery-travel
  *
  * Copyright (c) 2014 microtroll
  *
- * Version: 1.9.6
+ * Version: 1.9.7
  * Requires: jQuery v2+
  *
  * Dual licensed under the MIT and GPL licenses:
@@ -21,7 +21,7 @@
 
     var o = {
       data: 'cities.json',
-      center: [0, 0], // lng, lat
+      center: [0, 0], // lat, lng
       width: 550,
       height: 500,
       zoom: 1,

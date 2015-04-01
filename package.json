@@ -1,0 +1,29 @@
+{
+  "name": "jquery-travel",
+  "version": "1.9.7",
+  "description": "Pin anything on Google map with jQuery",
+  "keywords": [
+    "travel",
+    "map"
+  ],
+  "main": "jquery.travelmap.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha",
+    "minify": "./node_modules/.bin/uglifyjs jquery.travelmap.js -mc > jquery.travelmap.min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/microtroll/jquery-travel.git"
+  },
+  "author": "microtroll",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/microtroll/jquery-travel/issues"
+  },
+  "homepage": "https://github.com/microtroll/jquery-travel",
+  "devDependencies": {
+    "chai": "^2.2.0",
+    "mocha": "^2.2.1",
+    "uglify-js": "^2.4.19"
+  }
+}

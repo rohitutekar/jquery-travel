@@ -27,7 +27,7 @@ $('#map_canvas').travelmap();
 ```javascript
 $('#map_canvas').travelmap({
   data: 'cities.json',
-  center: [0, 0], // lng, lat
+  center: [0, 0], // lat, lng
   width: 550,
   height: 500,
   zoom: 1,
