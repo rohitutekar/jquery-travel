@@ -4,24 +4,44 @@
 <head>
   <meta charset="utf-8">
   <title>jQuery Travelmap</title>
-  <link rel="stylesheet" href="//code.jquery.com/qunit/qunit-1.17.1.css">
+  <link rel="stylesheet" href="../lib/qunit-1.18.0.css">
 </head>
 
 <body>
+
   <div id="qunit"></div>
   <div id="qunit-fixture">
-    <div id="map_canvas"></div>
+
+    <div id="map-default"></div>
+    <div id="map-small-size"></div>
+
   </div>
-  <script src="//code.jquery.com/qunit/qunit-1.17.1.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script src="//maps.googleapis.com/maps/api/js?sensor=true"></script>
+
+  <script src="../lib/qunit-1.18.0.js"></script>
+  <script src="../lib/jquery-2.1.4.min.js"></script>
+  <script src="../lib/google.js"></script>
+  <script src="../lib/main.js"></script>
   <script src="../jquery.travelmap.js"></script>
   <script>
-    QUnit.test('Travelmap default', function(assert) {
-      $('#map_canvas').travelmap();
-      ok($('#map_canvas').length, 'Canvas is visible');
+    $(function() {
+      'use strict';
+
+      // default map
+      $('#map-default').travelmap({
+        data: '../cities.json'
+      });
+
+      // smaller map
+      $('#map-small-size').travelmap({
+        height: 150,
+        width: 250,
+        data: '../cities.json'
+      });
+
     });
   </script>
+  <script src="tests.js"></script>
+
 </body>
 
 </html>

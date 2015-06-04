@@ -1,5 +1,6 @@
-jQuery Travelmap
-================
+# jQuery Travelmap
+
+[![Build Status](https://travis-ci.org/microtroll/jquery-travel.svg)](https://travis-ci.org/microtroll/jquery-travel)
 
 Pin your visited cities and countries on Google map with jQuery
 
@@ -9,7 +10,7 @@ Include the script, the Google API and jQuery then use the following options.
 Add `&languege=YOUR_COUNTRY_ISO` parameter to maps API to load the map in your language.
 
 ```html
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="//maps.googleapis.com/maps/api/js?sensor=false&language=en"></script>
 <script src="jquery.travelmap.js"></script>
 ```
