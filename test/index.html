@@ -9,13 +9,13 @@
 
 <body>
 
+  <!-- Keep maps visible for phantomjs -->
+  <div id="map-default"></div>
+  <div id="map-small-size"></div>
+  <div id="map-controls"></div>
+
   <div id="qunit"></div>
-  <div id="qunit-fixture">
-
-    <div id="map-default"></div>
-    <div id="map-small-size"></div>
-
-  </div>
+  <div id="qunit-fixture"></div>
 
   <script src="../lib/qunit-1.18.0.js"></script>
   <script src="../lib/jquery-2.1.4.min.js"></script>
@@ -36,6 +36,16 @@
         height: 150,
         width: 250,
         data: '../cities.json'
+      });
+
+      // controlls
+      $('#map-controls').travelmap({
+        data: '../cities.json',
+        zoomControl: true,
+        panControl: true,
+        scaleControl: true,
+        overviewMapControl: true,
+        streetViewControl: true
       });
 
     });
