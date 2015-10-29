@@ -1,5 +1,7 @@
 # jQuery Travelmap
 
+:warning: This plugin is deprecated and no more maintained. Please use the new version of [https://github.com/microtroll/travelmap](Travelmap)
+
 [![Build Status](https://travis-ci.org/microtroll/jquery-travel.svg)](https://travis-ci.org/microtroll/jquery-travel)
 
 Pin your visited cities and countries on Google map with jQuery
