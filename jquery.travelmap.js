@@ -4,21 +4,18 @@
  *
  * Examples and documentation at: https://github.com/microtroll/jquery-travel
  *
- * Copyright (c) 2014 microtroll
- *
- * Version: 1.9.7
- * Requires: jQuery v2+
+ * Version: 2.0.0
+ * Requires: jQuery v3+
  *
  * Dual licensed under the MIT and GPL licenses:
  * http://www.opensource.org/licenses/mit-license.php
  * http://www.gnu.org/licenses/gpl.html
  */
 
-(function($) {
+(function ($) {
   'use strict';
 
-  $.fn.travelmap = function(settings) {
-
+  $.fn.travelmap = function (settings) {
     var o = {
       data: 'cities.json',
       center: [0, 0], // lat, lng
@@ -83,13 +80,13 @@
     var pos = new google.maps.LatLng(o.center[0], o.center[1]);
 
     if (navigator.geolocation && o.geoLocCheck === true) {
-      navigator.geolocation.getCurrentPosition(function(position) {
+      navigator.geolocation.getCurrentPosition(function (position) {
         var geocoder = new google.maps.Geocoder();
         pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
         if (geocoder) {
           geocoder.geocode({
             'latLng': pos
-          }, function(resp, status) {
+          }, function (resp, status) {
             if (status === google.maps.GeocoderStatus.OK) {
               var infowindow = new google.maps.InfoWindow({
                 map: map,
@@ -98,16 +95,15 @@
               });
               map.setCenter(resp[0].geometry.location);
             } else {
-              throw new Error("Geocoding failed: " + status);
+              throw new Error('Geocoding failed: ' + status);
             }
           });
         }
       });
     }
 
-    // themes
-    var theme;
     // themes from http://snazzymaps.com/
+    var theme;
     if (o.theme === 'neutral-blue') {
       theme = [{
         "featureType": "water",
@@ -611,9 +607,8 @@
     $.ajax({
       url: o.data,
       dataType: 'json',
-      success: function(data) {
-
-        data.places.forEach(function(p, i) {
+      success: function (data) {
+        data.forEach(function (p, i) {
           locations[i] = new google.maps.LatLng(p.lat, p.lng);
 
           // markers options
@@ -650,13 +645,12 @@
           });
 
           markers[i]._index = i;
-          google.maps.event.addListener(markers[i], 'click', function() {
+          google.maps.event.addListener(markers[i], 'click', function () {
             boxes[this._index].open(map, markers[this._index]);
           });
-
         });
       },
-      error: function() {
+      error: function () {
         throw new Error('Error while loading JSON object!');
       }
     });
@@ -665,7 +659,5 @@
       width: o.width,
       height: o.height
     });
-
   };
-
 })(jQuery);

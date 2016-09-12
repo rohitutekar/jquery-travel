@@ -5,10 +5,9 @@
   <meta charset="UTF-8">
   <title>jQuery Travelmap</title>
 
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 </head>
 
@@ -26,7 +25,7 @@
         <h3>How to use</h3>
         <p>Include the script, the Google API and jQuery then use the following options.</p>
         <p>Add <code>&languege=YOUR_COUNTRY_ISO</code> parameter to maps API to load the map in your language.</p>
-        <pre><code>&lt;script src="<strong>//maps.googleapis.com/maps/api/js?sensor=false&language=en</strong>"&gt;&lt;/script&gt;<br>&lt;script src="<strong>//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js</strong>"&gt;&lt;/script&gt;<br>&lt;script src="<Strong>jquery.travelmap.js</strong>"&gt;&lt;/script&gt;</code></pre>
+        <pre><code>&lt;script src="<strong>//maps.googleapis.com/maps/api/js?key=YOUR_API_KEY</strong>"&gt;&lt;/script&gt;<br>&lt;script src="<strong>//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js</strong>"&gt;&lt;/script&gt;<br>&lt;script src="<Strong>jquery.travelmap.js</strong>"&gt;&lt;/script&gt;</code></pre>
         <p>Select an element and set up the script but be careful it only usable with id-s because of how the Google API works.</p>
         <pre><code>$('#map_canvas').travelmap();</code></pre>
       </div>
@@ -69,7 +68,7 @@
     <div class="row">
       <div class="col-md-7">
         <h3>The JSON object</h3>
-        <pre><code>{<br>  "places": [{<br>    "name": "London",<br>    "lat": "51.500152",<br>    "lng": "-0.126236",<br>    "country": "United Kingdom",<br>    "info": "London is the capital city of England"<br>  }]<br>}</code></pre>
+        <pre><code>[{<br>  "name": "London",<br>  "lat": "51.500152",<br>  "lng": "-0.126236",<br>  "country": "United Kingdom",<br>  "info": "London is the capital city of England"<br>}]</code></pre>
       </div>
       <div class="col-md-5">
         <h3>Demo</h3>
@@ -79,9 +78,8 @@
 
   </div>
 
-  <!-- Scripts -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  <script src="//maps.googleapis.com/maps/api/js?sensor=true"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyCN8Fl1lcO5KlMZrSsDCVTOvIYf1nL4Q08"></script>
   <script src="jquery.travelmap.min.js"></script>
   <!-- <script src="jquery.travelmap.js"></script> -->
 
