@@ -1,5 +1,5 @@
 /**
- * Travelmap - jQuery Plugin
+ * Travel - jQuery Plugin
  * Pin anything on Google map with jQuery
  *
  * Examples and documentation at: https://github.com/microtroll/jquery-travel
@@ -15,7 +15,7 @@
 (function ($) {
   'use strict';
 
-  $.fn.travelmap = function (settings) {
+  $.fn.travel = function (settings) {
     var o = {
       data: 'cities.json',
       center: [0, 0], // lat, lng

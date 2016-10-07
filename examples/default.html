@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery Travel</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <div id="map_canvas_1"></div>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyCN8Fl1lcO5KlMZrSsDCVTOvIYf1nL4Q08"></script>
+  <script src="../jquery.travel.min.js"></script>
+
+  <script>
+    $(function() {
+      'use strict';
+
+      // Travel
+      $('#map_canvas_1').travel({
+        markAnimation: 'DROP',
+        mapTypeControl: true,
+        mapTypeControlOptions: 'DROPDOWN_MENU',
+        zoomControl: true,
+        zoomControlOptions: 'SMALL',
+        streetViewControl: true,
+        height: 600,
+        width: 600,
+        zoom: 10,
+        geoLocCheck: true,
+        geoLocMessage: 'You are here...'
+      });
+    });
+  </script>
+
+</body>
+
+</html>

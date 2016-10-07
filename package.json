@@ -3,10 +3,8 @@
   "version": "2.0.0",
   "description": "Pin anything on Google map with jQuery",
   "scripts": {
-    "minify": "uglifyjs jquery.travelmap.js > jquery.travelmap.min.js"
+    "minify": "uglifyjs jquery.travel.js > jquery.travel.min.js"
   },
-  "author": "microtroll",
-  "homepage": "https://github.com/microtroll/jquery-travel",
   "devDependencies": {
     "uglify": "^0.1.5"
   }
